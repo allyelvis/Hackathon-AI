@@ -3,9 +3,9 @@ import React from 'react';
 interface StatCardProps {
   title: string;
   value: number | string;
-  // FIX: The type for 'icon' was changed from React.ReactNode to React.ReactElement.
-  // React.ReactElement is more specific and ensures the prop is a clonable
-  // element that can accept props like className, which resolves the TypeScript error.
+  // FIX: Changed icon prop type from React.ReactNode to React.ReactElement.
+  // React.cloneElement requires a React.ReactElement to safely add props like 'className'.
+  // The original React.ReactNode type was too broad and caused a type error.
   icon: React.ReactElement;
 }
 

@@ -1,4 +1,3 @@
-
 export enum View {
   Dashboard = 'Dashboard',
   Submissions = 'Submissions',
@@ -6,6 +5,7 @@ export enum View {
   Analytics = 'Analytics',
   Settings = 'Settings',
   Registration = 'Registration',
+  CreateHackathon = 'Create Hackathon',
   NewSubmission = 'New Submission',
 }
 

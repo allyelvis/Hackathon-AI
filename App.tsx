@@ -8,6 +8,7 @@ import { WinnersView } from './components/WinnersView';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
 import { RegistrationView } from './components/RegistrationView';
 import { NewSubmissionView } from './components/NewSubmissionView';
+import { CreateHackathonView } from './components/CreateHackathonView';
 import { View, Project, ProjectStatus } from './types';
 import { mockProjects } from './constants';
 
@@ -73,6 +74,8 @@ const App: React.FC = () => {
         return <RegistrationView />;
       case View.NewSubmission:
         return <NewSubmissionView onAddProject={handleAddProject} />;
+      case View.CreateHackathon:
+        return <CreateHackathonView />;
       default:
         return <DashboardView stats={stats} projects={projects}/>;
     }
