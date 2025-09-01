@@ -1,0 +1,5 @@
+{
+  "name": "Hackathon AI Dashboard",
+  "description": "An AI-powered dashboard for managing and monitoring hackathon projects. It provides key metrics, submission tracking, and leverages Gemini for in-depth project analysis to assist judges and organizers.",
+  "requestFramePermissions": []
+}

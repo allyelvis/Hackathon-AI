@@ -1,0 +1,55 @@
+
+import { Project, ProjectStatus } from './types';
+
+export const mockProjects: Project[] = [
+  {
+    id: 'proj-001',
+    name: 'AI-Powered Code Reviewer',
+    description: 'A tool that uses machine learning to automatically review pull requests, identify potential bugs, and suggest improvements based on coding best practices. It integrates directly with GitHub.',
+    teamMembers: ['Alice Johnson', 'Bob Williams'],
+    submissionTime: new Date('2024-07-20T10:30:00Z'),
+    status: ProjectStatus.Judging,
+    repoUrl: 'https://github.com/example/ai-code-reviewer',
+    demoUrl: 'https://ai-reviewer.example.com',
+  },
+  {
+    id: 'proj-002',
+    name: 'EcoRoute Planner',
+    description: 'A mobile app that calculates the most carbon-efficient route for travel, considering traffic, vehicle type, and elevation changes. It also tracks carbon savings over time.',
+    teamMembers: ['Charlie Brown', 'Diana Miller', 'Eve Davis'],
+    submissionTime: new Date('2024-07-20T11:15:00Z'),
+    status: ProjectStatus.Submitted,
+    repoUrl: 'https://github.com/example/ecoroute',
+    demoUrl: 'https://ecoroute.example.com',
+  },
+  {
+    id: 'proj-003',
+    name: 'Decentralized Identity Platform',
+    description: 'A blockchain-based platform for managing digital identities, giving users full control over their personal data and how it is shared with third-party services.',
+    teamMembers: ['Frank White', 'Grace Lee'],
+    submissionTime: new Date('2024-07-20T09:45:00Z'),
+    status: ProjectStatus.Winner,
+    repoUrl: 'https://github.com/example/did-platform',
+    demoUrl: 'https://did-platform.example.com',
+  },
+  {
+    id: 'proj-004',
+    name: 'Virtual Reality Meeting Space',
+    description: 'A collaborative VR environment for remote teams to hold meetings, brainstorm ideas on virtual whiteboards, and interact with 3D models in a shared space.',
+    teamMembers: ['Heidi Chen', 'Ivan Rodriguez', 'Judy Kim'],
+    submissionTime: new Date('2024-07-20T12:00:00Z'),
+    status: ProjectStatus.Finalist,
+    repoUrl: 'https://github.com/example/vr-meetings',
+    demoUrl: 'https://vr-meetings.example.com',
+  },
+  {
+    id: 'proj-005',
+    name: 'Supply Chain Tracker',
+    description: 'An IoT and blockchain solution for tracking goods through a supply chain, ensuring transparency, authenticity, and reducing fraud by providing an immutable record of each item\'s journey.',
+    teamMembers: ['Kevin Patel', 'Laura Garcia'],
+    submissionTime: new Date('2024-07-20T11:50:00Z'),
+    status: ProjectStatus.Judging,
+    repoUrl: 'https://github.com/example/supply-chain-tracker',
+    demoUrl: 'https://supply-tracker.example.com',
+  },
+];
