@@ -5,6 +5,8 @@ export enum View {
   Winners = 'Winners',
   Analytics = 'Analytics',
   Settings = 'Settings',
+  Registration = 'Registration',
+  NewSubmission = 'New Submission',
 }
 
 export enum ProjectStatus {

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { View } from '../types';
-import { DashboardIcon, SubmissionsIcon, AnalyticsIcon, SettingsIcon, LogoIcon, TrophyIcon } from './icons/Icons';
+import { DashboardIcon, SubmissionsIcon, AnalyticsIcon, SettingsIcon, LogoIcon, TrophyIcon, UserPlusIcon, DocumentPlusIcon } from './icons/Icons';
 
 interface SidebarProps {
   activeView: View;
@@ -48,10 +48,22 @@ export const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) =
           onClick={() => setActiveView(View.Submissions)}
         />
         <NavItem
+          icon={<DocumentPlusIcon />}
+          label={View.NewSubmission}
+          isActive={activeView === View.NewSubmission}
+          onClick={() => setActiveView(View.NewSubmission)}
+        />
+        <NavItem
           icon={<TrophyIcon />}
           label={View.Winners}
           isActive={activeView === View.Winners}
           onClick={() => setActiveView(View.Winners)}
+        />
+        <NavItem
+          icon={<UserPlusIcon />}
+          label={View.Registration}
+          isActive={activeView === View.Registration}
+          onClick={() => setActiveView(View.Registration)}
         />
         <NavItem
           icon={<AnalyticsIcon />}

@@ -6,12 +6,14 @@ import { DashboardView } from './components/DashboardView';
 import { SubmissionsView } from './components/SubmissionsView';
 import { WinnersView } from './components/WinnersView';
 import { ProjectDetailModal } from './components/ProjectDetailModal';
+import { RegistrationView } from './components/RegistrationView';
+import { NewSubmissionView } from './components/NewSubmissionView';
 import { View, Project, ProjectStatus } from './types';
 import { mockProjects } from './constants';
 
 const App: React.FC = () => {
   const [activeView, setActiveView] = useState<View>(View.Dashboard);
-  const [projects] = useState<Project[]>(mockProjects);
+  const [projects, setProjects] = useState<Project[]>(mockProjects);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [statusFilter, setStatusFilter] = useState<ProjectStatus | 'All'>('All');
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,6 +38,11 @@ const App: React.FC = () => {
   const winnerProjects = useMemo(() => {
     return projects.filter(p => p.status === ProjectStatus.Winner || p.status === ProjectStatus.Finalist);
   }, [projects]);
+
+  const handleAddProject = (project: Project) => {
+    setProjects(prevProjects => [project, ...prevProjects]);
+    setActiveView(View.Submissions);
+  };
 
   const handleSelectProject = (project: Project) => {
     setSelectedProject(project);
@@ -62,6 +69,10 @@ const App: React.FC = () => {
         );
       case View.Winners:
         return <WinnersView projects={winnerProjects} onSelectProject={handleSelectProject} />;
+      case View.Registration:
+        return <RegistrationView />;
+      case View.NewSubmission:
+        return <NewSubmissionView onAddProject={handleAddProject} />;
       default:
         return <DashboardView stats={stats} projects={projects}/>;
     }
